@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To do app</title>
+    <link rel="stylesheet" href="{% static 'todos/style_index.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="logo">
+        <a href="{% url 'home' %}">TODO</a>
+      </div>
+
+      <div class="new_todo">
+        <form class="" action="{% url 'home' %}" method="POST">{% csrf_token %}
+          {{ form.todo_text }}
+          <button type="submit" class="add_btn" name="button">ADD</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="incomplete_tasks">
+        <div class="heading">
+          <p>Tasks</p>
+        </div>
+          {% for todo in todos %}
+            {% if todo.completed %}
+            {% else %}
+              <div class="todos">
+                <div class="checkbox">
+                  <a href="{% url 'cross_off' todo.id %}"><i class="fa fa-square-o"></i></a>
+                </div>
+                <p>{{ todo.todo_text }}</p>
+                <a href="{% url 'delete' todo.id %}"><i class="fas fa-trash"></i></a>
+                <a href="#"><i class="fas fa-edit"></i></a>
+              </div>
+            {% endif %}
+          {% endfor %}
+      </div>
+      <div class="completed_tasks">
+        <div class="heading">
+          <p>Completed</p>
+          <a href="{% url 'dlt_completed' %}" class="dlt_completed">
+            <div class="dlt_completed_btn">
+              Delete completed
+            </div>
+          </a>
+        </div>
+        {% for todo in todos %}
+          {% if todo.completed %}
+            <div class="todos_completed">
+              <div class="checkbox">
+                <a href="{% url 'uncross' todo.id %}"><i class="fa fa-check-square-o"></i></a>
+              </div>
+              <p>{{ todo.todo_text }}</p>
+              <a href="{% url 'delete' todo.id %}"><i class="fas fa-trash"></i></a>
+              <a href="#"><i class="fas fa-edit"></i></a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </body>
+</html>

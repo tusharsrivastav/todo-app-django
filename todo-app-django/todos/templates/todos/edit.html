@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To do app</title>
+    <link rel="stylesheet" href="{% static 'todos/style_index.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="logo">
+        <a href="{% url 'home' %}">TODO</a>
+      </div>
+
+    </div>
+
+    <div class="content">
+      <div class="new_todo_edit">
+        <form method="POST">{% csrf_token %}
+          {{ form.todo_text }}
+          <button type="submit" class="add_btn_edit" name="button">SAVE</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+body{
+  margin: 0px;
+  padding: 0px;
+  background: rgb(245, 245, 245);
+}
+
+/* Navigation bar */
+
+.header{
+  width: 100%;
+  min-height: 100px;
+  background: rgb(69, 128, 217);
+}
+.logo{
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 15px 50px;
+  padding: 5px;
+}
+.logo a{
+  text-align: center;
+  font-family: Poppins;
+  font-size: 35px;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.new_todo{
+  width: auto;
+  height: auto;
+  float: right;
+  margin: 30px 50px;
+}
+.create_bar{
+  width: 250px;
+  height: 15px;
+  padding: 10px;
+  border: none;
+  float: left;
+  border-radius: 10px 0px 0px 10px;
+  font-family: Montserrat;
+  font-size: 15px;
+}
+.add_btn{
+  width: 60px;
+  height: 35px;
+  border: none;
+  background: rgb(122, 159, 231);
+  padding: 5px;
+  float: left;
+  border-radius: 0px 10px 10px 0px;
+  color: rgb(255, 255, 255);
+  font-family: Poppins;
+  font-size: 18px;
+}
+.add_btn:hover{
+  background: rgb(84, 143, 231);
+  cursor: pointer;
+}
+
+/* Content */
+
+.content{
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.heading{
+  width: calc(90% - 20px);
+  height: 35px;
+  margin: 10px 5%;
+  padding: 10px;
+  padding-left: 15px;
+  float: left;
+}
+.heading p{
+  margin: 0px;
+  margin-top: 5px;
+  color: rgb(0, 0, 0);
+  font-family: Montserrat;
+  font-size: 20px;
+  float: left;
+}
+.dlt_completed{
+  text-decoration: none;
+}
+.dlt_completed_btn{
+  width: auto;
+  height: 25px;
+  padding: 5px 15px;
+  float: right;
+  background: rgb(222, 221, 221);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  margin: 0px;
+  font-size: 17px;
+  font-family: Poppins;
+  transition: 0.1s
+}
+.dlt_completed_btn:hover{
+  background: rgb(187, 186, 186);
+}
+.todos{
+  width: calc(90% - 20px);
+  height: 25px;
+  background: rgb(222, 221, 221);
+  margin: 10px 5%;
+  padding: 10px;
+  padding-left: 15px;
+  float: left;
+  border-radius: 5px;
+}
+.todos p{
+  margin: 0px;
+  color: rgb(0, 0, 0);
+  font-family: Poppins;
+  font-size: 16px;
+}
+.todos a{
+  float: right;
+  margin: 15px;
+  margin-top: -23px;
+  color: rgb(29, 29, 29);
+}
+.todos a:hover{
+  color: rgb(107, 105, 105);
+}
+.todos_completed{
+  width: calc(90% - 20px);
+  height: 25px;
+  background: rgb(222, 221, 221);
+  margin: 10px 5%;
+  padding: 10px;
+  padding-left: 15px;
+  float: left;
+  border-radius: 5px;
+}
+.todos_completed p{
+  margin: 0px;
+  color: rgba(0, 0, 0, 0.59);
+  font-family: Poppins;
+  font-size: 16px;
+  text-decoration: line-through;
+}
+.todos_completed a{
+  float: right;
+  margin: 15px;
+  margin-top: -23px;
+  color: rgb(29, 29, 29);
+}
+.todos_completed a:hover{
+  color: rgb(107, 105, 105);
+}
+.checkbox{
+  width: 17px;
+  height: 17px;
+  float: left;
+  margin: 26px 0px 0px 15px;
+  font-size: 20px;
+}
